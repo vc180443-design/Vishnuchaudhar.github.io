@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vishnu Chaudhary | Graphic Designer</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+color:white;
+}
+
+header{
+padding:20px;
+text-align:center;
+background:black;
+font-size:24px;
+font-weight:bold;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:35px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+Vishnu Chaudhary Portfolio
+</header>
+
+<section class="gallery">
+
+<img src="images/DSC_0720.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0721.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0722.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0723.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0724.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0725.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0726.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0727.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0728.jpg" onclick="openImg(this.src)">
+<img src="images/DSC_0729.jpg" onclick="openImg(this.src)">
+
+</section>
+
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeImg()">✖</span>
+<img id="lightbox-img">
+</div>
+
+<script>
+
+function openImg(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+}
+
+function closeImg(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
